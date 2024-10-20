@@ -1,38 +1,404 @@
-.App {
-  text-align: center;
+/* General */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #14121C;
+  color: #fff;
+  overflow-x: hidden; /* Para evitar el desbordamiento horizontal */
+}
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.cabecera {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo opaco */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  position: fixed; 
+  width: 100%; /* Para que ocupe todo el ancho */
+  z-index: 10;
+}
+
+.cabecera::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(45deg, #30FF97, #1CBBFF, #30FF97); /* Borde degradado */
+}
+
+.navegacion ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+
+}
+
+.navegacion ul li a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  margin: 0px 50px;
+}
+
+.navegacion ul li a:hover {
+  color: #00ffa2;
+}
+
+/* Sección Hero */
+.seccion-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  overflow-x: hidden; /* Para evitar el desbordamiento horizontal */
+  padding-bottom: 140px;
+  padding-top: 130px;
+}
+
+.contenedor-texto {
+  max-width: 50%;
+}
+
+/* Título Principal */
+.titulo-principal {
+  font-size: 32px;
+  font-family: 'Lemon/Milk', sans-serif;
+  font-weight: 600;
+  margin-bottom: -40px;
+  margin-top: 100px;
+}
+
+.nombre-completo {
+  display: flex;
+  align-items: flex-end; /* Alineación al fondo */
+  margin-bottom: -20px;
+}
+
+.nombre {
+  font-size: 30px;
+  font-family: 'Lemon/Milk Light', sans-serif;
+  font-weight: lighter;
+  color: white;
+  margin-right: 8px;
+  margin-bottom: 40px;
+}
+
+.apellido {
+  font-size: 128px;
+  font-family: 'Lemon/Milk', sans-serif;
+  font-weight: Bold;
+  color: #00ffa2;
+}
+
+.titulo-dinamico {
+  font-size: 32px;
+  font-family: 'Lemon/Milk', sans-serif;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+/* Texto Dinámico */
+.texto-dinamico {
+  font-size: 32px;
+  font-family: 'Lemon/Milk', sans-serif;
+  color: #1CBBFF;
+  border-right: 3px solid;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.5s steps(10) infinite, maquina-escribir 2s steps(10) infinite alternate;
+}
+
+@keyframes maquina-escribir {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 240px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes blink {
+  0% {
+    border-right-color: rgba(255, 255, 255, .75);
+  }
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+/* Descripción */
+.descripcion {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 30px;
+  margin-top: 1rem;
+}
+
+.boton-descargar {
+  display: inline-flex; /* Ajusta para alinear icono y texto */
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 15px 40px;
+  background-color: #00ffa2;
+  color: #000;
+  font-weight: 600;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent; /* Agregar un borde predeterminado transparente */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra predeterminada */
+}
+
+.boton-descargar:hover {
+  background-color: #14121C;
+  color: #fff;
+  border: 2px solid #30FF97; /* Cambia el contorno del borde */
+  box-shadow: 0px 8px 16px rgba(48, 255, 151, 0.4); /* Sombra cuando se hace hover */
+}
+
+.svg-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Espacio entre icono y texto */
+  fill: #000; /* Color inicial del icono */
+  transition: fill 0.3s ease; /* Transición suave del color */
+}
+
+.boton-descargar:hover .svg-icon {
+  filter: brightness(0) invert(1); /* Forzar a color blanco */
+}
+
+
+.circulo-blanco {
+  position: absolute;
+  top: -300px; /* Ajusta según tu preferencia */
+  right: -200px; /* Ajusta para evitar desbordamiento */
+  width: 845px; /* Tamaño del círculo */
+  height: 845px; /* Tamaño del círculo */
+  background-color: white;
+  border-radius: 50%; /* Para que sea un círculo */
+  z-index: -1; /* Asegura que quede detrás del contenido */
+  overflow-x: hidden; /* Evitar desbordamiento */
+}
+
+.contenedor-imagen {
+  position: relative;
+  display: inline-block;
+  left: -150px;
+  border-radius: 50%;
+  padding: 10px; /* Espacio entre la imagen y el borde */
+  background: linear-gradient(45deg, #00ffa2, #1CBBFF); /* Degradado */
+  margin-right: -50px; /* Mover imagen hacia la izquierda */
+}
+
+.contenedor-imagen img {
+  border-radius: 50%;
+  width: 545px;
+  height: 545px;
+  object-fit: cover;
+  background-clip: padding-box; /* Asegura que el degradado esté fuera de la imagen */
+  box-shadow: 0px 0px 60px #00ffa2; /* Sombra */
+}
+
+/* Sección de Habilidades */
+.seccion-habilidades {
+  padding: 2rem;
+  text-align: center;
+  color: #1c1c2b;
+}
+
+.seccion-habilidades h2 {
+  font-size: 2.5rem;
+  font-family: 'Lemon/Milk Light', sans-serif;
+  font-weight: 400px;
+  margin-bottom: 1rem;
+  padding-top: 10px;
+}
+
+.seccion-habilidades p {
+  color: #6347D0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  letter-spacing: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Estilos para los iconos de redes sociales */
+.iconos-redes {
+  position: absolute;
+  right: -80px; /* Ajusta la posición de los iconos */
+  top: 50%; /* Centrar verticalmente con respecto a la imagen */
+  transform: translateY(-50%); /* Ajustar con transform para centrar completamente */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaciado entre los iconos */
+}
+
+.iconos-redes img {
+  width: 40px; /* Tamaño de los iconos */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.iconos-redes img:hover {
+  transform: scale(1.2); /* Efecto de hover para agrandar los iconos */
+}
+.seccion-habilidades{
+  background-color: white;
+}
+
+/* Tarjeta de habilidad */
+.skill-card {
+  background-color: #1c1c2b; /* Color oscuro para las tarjetas */
+  padding: 20px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 300px;  /* Ajustar el tamaño a 350px x 350px */
+  height: 300px;
+  margin: 0px;
+  box-shadow: 0px 0px 20px rgba(27, 21, 76, 0.6); /* Sombra predeterminada */
+  position: relative; /* Para evitar desbordamientos en el hover */
 }
 
-.App-link {
-  color: #61dafb;
+.skill-card:hover {
+  background-color: #ffffff; /* Fondo blanco al hacer hover */
+  box-shadow: 0px 10px 25px rgba(1, 255, 128, 0.4); /* Sombra verde en hover */
+  transform: translateY(-5px); /* Elevar suavemente la tarjeta */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.skill-card img {
+  width: 143px;
+  height: 143px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.skill-card h4 {
+  margin: 10px 0;
+  font-size: 24px;
+  color: #ffffff; /* Color del texto predeterminado */
+}
+
+.skill-card:hover h4 {
+  color: #14121C; /* Cambiar el color del texto al hacer hover */
+}
+
+/* Barra de progreso */
+.progress-bar {
+  width: 80%;
+  height: 12px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #00ffa2; /* Verde para el progreso */
+  
+}
+
+/* Cambiar el color del progreso cuando la tarjeta tenga hover */
+.skill-card:hover .progress {
+  background-color: #00ffa2; /* Cambiar a color oscuro al hacer hover */
+}
+
+.skill-card:hover .progress-bar {
+  width: 80%;
+  height: 12px;
+  background-color: #14121C;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+/* Grid de habilidades */
+.skills-grid {
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+/* Para navegadores basados en WebKit (Chrome, Safari, Edge, Opera) */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+  background: #14121C; /* Color del fondo de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333; /* Color de la barra de desplazamiento */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 3px solid #14121C; /* Espacio entre la barra y el borde */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color de la barra cuando se hace hover */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin; /* Grosor de la barra en Firefox */
+  scrollbar-color: #00ffa2 #14121C; /* Color de la barra y el fondo */
+}
+.mensaje-descarga {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: #14121C;
+  padding: 7px 30px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  z-index: 100;
+  transition: all 0.5s  ease-in;
+  box-shadow: 0px 0px 60px #00ffa2; /* Sombra */
+}
+/* Tooltip aparecerá cuando se haga hover en la tarjeta */
+.skill-card {
+  position: relative;
+}
+
+.skill-card .tooltip {
+  display: none; /* Ocultarlo por defecto */
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #14121C;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  width: 250px;
+  z-index: 100; /* Asegura que quede por encima */
+}
+
+/* Muestra el tooltip al hacer hover en la tarjeta */
+.skill-card:hover .tooltip {
+  display: block;
 }

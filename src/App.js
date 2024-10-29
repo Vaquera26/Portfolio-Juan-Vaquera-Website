@@ -137,20 +137,28 @@ function App() {
 }, []);
 
   // Función que se ejecuta cuando se hace clic en "Download CV"
-  const handleDownload = () => {
-    const pdfUrl = "Resume_Juan_Fernando_Vaquera_Sanchez.pdf"; // ruta al archivo PDF
-    const link = document.createElement("a");
-    link.href = pdfUrl;
-    link.download = "CV_Juan_Vaquera.pdf"; // Nombre del archivo que se descargará
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    setShowMessage(true); // Mostrar mensaje
+  const handleDownload = () => {
+    const pdfUrl = `${process.env.PUBLIC_URL}/Resume_Juan_Fernando_Vaquera_Sanchez.pdf`; 
+    if (isMobile) {
+      window.open(pdfUrl, "_blank"); // En móviles, abre el archivo en una nueva pestaña
+    } else {
+      const link = document.createElement("a");
+      link.href = pdfUrl;
+      link.download = "CV_Juan_Vaquera.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  
+    setShowMessage(true);
     setTimeout(() => {
-      setShowMessage(false); // Ocultar mensaje después de 3 segundos
+      setShowMessage(false);
     }, 3000);
   };
+  
+  
 
   // Componente de barra de progreso
   const ProgressBar = ({ level }) => {

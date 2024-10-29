@@ -356,13 +356,13 @@ function App() {
           <SkillCard
             icon={jsIcon}
             name="JavaScript"
-            level={43}
+            level={60}
             description="Less than a year learning it, but even so, it has taught me to improve how I create web pages."
           />
           <SkillCard
             icon={tsIcon}
             name="TypeScript"
-            level={60}
+            level={43}
             description="My main tool for web development, it’s been a key player in my projects."
           />
           <SkillCard

@@ -41,6 +41,8 @@ import HACKMTY23 from "./img//activities/HACKMTY23.png";
 import GPICPC24 from "./img//activities/GPICPC24.png";
 import GPICPC23 from "./img//activities/GPICPC23.png";
 import CCTECNM23 from "./img//activities/CCTECNM23.png";
+import whatsappIcon from "./img/whatsapp.svg";
+import mailIcon from "./img/mail.svg";
 function App() {
   const [palabraActual, setPalabraActual] = useState("");
   const [indicePalabra, setIndicePalabra] = useState(0);
@@ -67,8 +69,7 @@ function App() {
     "GPICPC24.png": GPICPC24,
     "GPICPC23.png": GPICPC23,
     "CCTECNM23.png": CCTECNM23,
-
-  }
+  };
 
   useEffect(() => {
     const palabras = [
@@ -116,31 +117,31 @@ function App() {
 
   const handleShowMore = () => {
     setVisibleProjects((prevVisibleProjects) => prevVisibleProjects + 2);
-     // Añadimos el scroll automático aquí
-     window.scrollBy({
+    // Añadimos el scroll automático aquí
+    window.scrollBy({
       top: 600, // Ajusta el valor para controlar cuánto se desplaza hacia abajo
       left: 0,
-      behavior: 'smooth', // Desplazamiento suave
+      behavior: "smooth", // Desplazamiento suave
     }); // Show 2 more projects
   };
 
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/activities.json`) 
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data); // Imprime los datos en la consola
-      setActivities(data); // Almacena los datos en el estado
-    })
-    .catch((error) => console.error("Error fetching the JSON:", error));
-}, []);
+    fetch(`${process.env.PUBLIC_URL}/activities.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data); // Imprime los datos en la consola
+        setActivities(data); // Almacena los datos en el estado
+      })
+      .catch((error) => console.error("Error fetching the JSON:", error));
+  }, []);
 
   // Función que se ejecuta cuando se hace clic en "Download CV"
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   const handleDownload = () => {
-    const pdfUrl = `${process.env.PUBLIC_URL}/Resume_Juan_Fernando_Vaquera_Sanchez.pdf`; 
+    const pdfUrl = `${process.env.PUBLIC_URL}/Resume_Juan_Fernando_Vaquera_Sanchez.pdf`;
     if (isMobile) {
       window.open(pdfUrl, "_blank"); // En móviles, abre el archivo en una nueva pestaña
     } else {
@@ -151,14 +152,12 @@ function App() {
       link.click();
       document.body.removeChild(link);
     }
-  
+
     setShowMessage(true);
     setTimeout(() => {
       setShowMessage(false);
     }, 3000);
   };
-  
-  
 
   // Componente de barra de progreso
   const ProgressBar = ({ level }) => {
@@ -252,8 +251,6 @@ function App() {
       </div>
     );
   };
-  
-    
 
   return (
     <div className="App">
@@ -310,8 +307,7 @@ function App() {
 
         <div className="contenedor-imagen">
           <div className="fotoPrincipal">
-          <img  src={imagenPerfil} alt="Juan Vaquera" />
-
+            <img src={imagenPerfil} alt="Juan Vaquera" />
           </div>
 
           <div className="iconos-redes">
@@ -465,21 +461,57 @@ function App() {
 
       <section id="extractivities" className="section-extractivities">
         <h2>My Extra Activities</h2>
-        
+
         <div className="activitiesContainer">
-        {activities.map((activitie, index) => (
-          <div >
-          <ActivitiesCard             key={index}
-          photo={activitiesImages[activitie.photo]}
-          name={activitie.name}>
-
-          </ActivitiesCard>
-          </div>
-        ))}
+          {activities.map((activitie, index) => (
+            <div>
+              <ActivitiesCard
+                key={index}
+                photo={activitiesImages[activitie.photo]}
+                name={activitie.name}
+              ></ActivitiesCard>
+            </div>
+          ))}
         </div>
+      </section>
 
-        
+      <section>
+        <div className="section-contact" id="contacto">
+          <h2>Contact Me</h2>
+          <p>
+            If you want to know more about me, my projects, or just want to
+            chat, don't hesitate to contact me. I'm always open to new
+            opportunities and collaborations.
+          </p>
 
+          <div className="buttonContainer">
+            <a
+              className="boton-descargar"
+              href="https://wa.me/528712695068?text=I%20just%20saw%20your%20portfolio,%20do%20you%20have%20a%20minute?"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="button"
+            >
+              <img
+                src={whatsappIcon}
+                alt="WhatsApp Icon"
+                className="svg-icon"
+              />
+              WhatsApp Me
+            </a>
+
+            <a
+              className="boton-descargar"
+              href="mailto:juan.tec@outlook.com?subject=Portfolio%20Inquiry&body=I%20just%20saw%20your%20portfolio,%20do%20you%20have%20a%20minute%20to%20chat?"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="button"
+            >
+              <img src={mailIcon} alt="Mail Icon" className="svg-icon" />
+              Mail Me
+            </a>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -17,31 +17,33 @@ a {
 }
 
 .cabecera {
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo opaco */
-  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo opaco */
+  backdrop-filter: blur(30px); /* Efecto de desenfoque */
   padding: 1rem 2rem;
   display: flex;
-  justify-content: center;
-  position: fixed; 
-  width: 100%; /* Para que ocupe todo el ancho */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  position: fixed;
+  width: 90%; /* Mantén el ancho al 90% */
   z-index: 10;
-}
-
-.cabecera::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(45deg, #30FF97, #1CBBFF, #30FF97); /* Borde degradado */
+  height: 40px;
+  vertical-align: middle;
+  margin: 0px auto;
+  border-radius: 50px;
+  box-shadow: 0px 0px 60px #00ffa220; /* Sombra */
 }
 
 .navegacion ul {
   list-style: none;
   display: flex;
   gap: 20px;
-
+  justify-content: center; /* Centra los elementos del menú horizontalmente */
+  align-items: center; /* Alinea verticalmente los elementos del menú */
+  padding: 0;
+  margin: 0;
 }
 
 .navegacion ul li a {
@@ -55,6 +57,7 @@ a {
 .navegacion ul li a:hover {
   color: #00ffa2;
 }
+
 
 /* Sección Hero */
 .seccion-hero {
@@ -173,7 +176,7 @@ a {
   margin-right: 10px; /* Espacio entre icono y texto */
   fill: #000; /* Color inicial del icono */
   transition: fill 0.3s ease; /* Transición suave del color */
-}
+} 
 
 .boton-descargar:hover .svg-icon {
   filter: brightness(0) invert(1); /* Forzar a color blanco */
@@ -196,6 +199,17 @@ a {
   position: relative;
   display: inline-block;
   left: -150px;
+  border-radius: 50%;
+  padding: 10px; /* Espacio entre la imagen y el borde */
+ 
+  margin-right: -50px; /* Mover imagen hacia la izquierda */
+}
+
+.fotoPrincipal{
+  position: relative;
+  display: inline-block;
+  
+  width: 545px;
   border-radius: 50%;
   padding: 10px; /* Espacio entre la imagen y el borde */
   background: linear-gradient(45deg, #00ffa2, #1CBBFF); /* Degradado */
@@ -376,14 +390,17 @@ a {
   box-shadow: 0px 0px 60px #00ffa2; /* Sombra */
 }
 /* Tooltip aparecerá cuando se haga hover en la tarjeta */
+/* Tooltip aparecerá cuando se haga hover en la tarjeta */
 .skill-card {
   position: relative;
+  margin-bottom: 30px; /* Ajustar el espacio para el tooltip */
+  overflow: visible; /* Asegura que el contenido se pueda ver fuera de la tarjeta */
 }
 
 .skill-card .tooltip {
   display: none; /* Ocultarlo por defecto */
   position: absolute;
-  bottom: -60px;
+  top: -50px; /* Cambia de bottom a top para evitar que se superponga abajo */
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
@@ -395,10 +412,508 @@ a {
   font-weight: 500;
   text-align: center;
   width: 250px;
-  z-index: 100; /* Asegura que quede por encima */
+  z-index: 999; /* Asegúrate que el tooltip esté por encima de otros elementos */
 }
 
 /* Muestra el tooltip al hacer hover en la tarjeta */
 .skill-card:hover .tooltip {
   display: block;
+  opacity: 1; /* Lo hacemos visible */
+  visibility: visible; /* Ahora es interactuable */
+  z-index: 999; /* Asegúrate que el tooltip esté por encima de otros elementos */
+}
+
+.seccion-proyectos {
+  padding: 2rem;
+  text-align: center;
+  
+}
+
+.seccion-proyectos h2 {
+  font-size: 2.5rem;
+  font-family: 'Lemon/Milk Light', sans-serif;
+  font-weight: 400px;
+  margin-bottom: 1rem;
+  padding-top: 10px;
+}
+
+.proyect-Card-Container{
+  
+  flex-direction: row;
+  width: 100%;
+  display: flex;
+  background-color: #1E1B28;
+  align-items: flex-start;
+  border-radius: 50px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  
+}
+
+.icons-KeyCard {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.imageProject {
+  flex: 0 0 510px;
+  height: 310px;
+  
+
+  overflow: hidden;
+  margin: auto;
+ 
+}
+
+.imageProject img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.nameANDIconsContainer{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+  padding-right: 300px;
+  margin-top: 30px;
+}
+.nameANDIconsContainer{
+  align-self: right;
+}
+
+.nameContainer{
+  display: flex;
+  margin-right: 100px;
+}
+.iconsContainer{
+  
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.description{
+  width: 90%;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.infoProjectContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+ 
+  align-items: flex-start;
+ 
+
+  
+}
+
+.showmoreButton{
+  background-color: #00ffa2;
+  border-radius: 50px;
+  width: 30%;
+  height: 40px;
+  border: none;
+}
+.showmoreButton:hover{
+  background-color: #14121C;
+  color: #fff;
+  border: 2px solid #30FF97; /* Cambia el contorno del borde */
+  box-shadow: 0px 8px 16px rgba(48, 255, 151, 0.4); /* Sombra cuando se hace hover */
+}
+
+.section-extractivities {
+  padding-top: 2rem;
+  text-align: center;
+  background-color: white;
+  color: #14121C;
+  width: 100%;
+}
+
+.section-extractivities h2 {
+  font-size: 2.5rem;
+  font-family: 'Lemon/Milk Light', sans-serif;
+  font-weight: 400px;
+  margin-bottom: 1rem;
+  padding-top: 10px;
+}
+
+.activitiesContainer {
+  display: flex;
+  justify-content: space-evenly; /* Alinea las tarjetas como en las skill cards */
+  flex-wrap: wrap; /* Permite que las tarjetas pasen a la siguiente fila si es necesario */
+  gap: 20px; /* Espaciado entre tarjetas */
+
+
+}
+
+.activities-card {
+  display: flex;
+  flex-direction: column; /* Coloca el contenido de las tarjetas en una columna */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px; /* Espacio entre las tarjetas */
+  width: 300px; /* Ancho de cada tarjeta */
+
+
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.activitie-img {
+  border-radius: 40px;
+  overflow: hidden;
+  height: 240px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.activitie-img img {
+  width: 130%; /* Asegura que la imagen ocupe todo el ancho disponible */
+  object-fit: cover;
+}
+
+.activitie-name {
+  margin-top: 10px; /* Añade espacio entre la imagen y el nombre */
+}
+
+.activitie-name h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  /* Ajusta la cabecera */
+  .cabecera {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .circulo-blanco {
+    position: absolute;
+    top: -190px; /* Ajusta según tu preferencia */
+    right: -200px; /* Ajusta para evitar desbordamiento */
+    width: 450px; /* Tamaño del círculo */
+    height: 450px; /* Tamaño del círculo */
+    background-color: white;
+    border-radius: 50%; /* Para que sea un círculo */
+    z-index: -1; /* Asegura que quede detrás del contenido */
+    overflow-x: hidden; /* Evitar desbordamiento */
+  }
+
+  /* Ajusta la navegación */
+  .navegacion ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navegacion ul li a {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  /* Ajusta el contenedor de texto */
+  .contenedor-texto {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  /* Ajusta los títulos */
+  .titulo-principal, .titulo-dinamico {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .nombre {
+    font-size: 24px;
+  }
+
+  .apellido {
+    font-size: 50px;
+  }
+
+  /* Ajusta las imágenes del héroe */
+  .contenedor-imagen {
+    left: 0;
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  .iconos-redes{
+    flex-direction: row;
+    padding-right: 900px;
+
+  }
+  .contenedor-imagen img {
+    width: 10%;
+    height: auto;
+  }
+
+  /* Ajusta las habilidades */
+  .skills-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  /* Ajusta los proyectos */
+  .proyect-Card-Container {
+    flex-direction: column;
+  }
+
+  .infoProjectContainer {
+    width: auto;
+    margin-top: 20px;
+  }
+  /* Ajusta las actividades */
+  .activitiesContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .activities-card {
+    width: 90%;
+  }
+
+  /* Ajusta botones */
+  .boton-descargar {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  /* Ajusta el contenedor de la imagen para que no se desborde */
+  .contenedor-imagen {
+    left: 0;
+    margin: 0 auto;
+    width: 70%; /* Reduce el ancho de la imagen */
+  }
+
+  .contenedor-imagen img {
+    width: 100%;
+    height: auto;
+  }
+
+  .fotoPrincipal img{
+    width: 200px;
+    height: 200px;
+
+  }
+
+
+
+ 
+
+  /* Ajusta los iconos de redes sociales */
+  .iconos-redes {
+    position: relative; /* Para que ya no sea absoluta */
+    margin-top: 60px; /* Añade margen superior */
+   left: -180px;
+    justify-content: center; /* Centra los íconos horizontalmente */
+    gap: 15px; /* Ajusta el espaciado entre los íconos */
+    top: 200px
+  }
+
+  .iconos-redes img {
+    width: 30px; /* Haz los íconos más pequeños */
+    height: 30px;
+  }
+
+  /* Ajuste del texto dinámico */
+  .texto-dinamico {
+    font-size: 24px;
+  }
+
+  /* Ajustes adicionales para el texto */
+  .contenedor-texto {
+    padding: 1rem;
+    text-align: center; /* Centra el texto */
+  }
+
+  .titulo-principal, .titulo-dinamico {
+    font-size: 24px;
+  }
+
+  .nombre {
+    font-size: 24px;
+  }
+
+  .apellido {
+    font-size: 50px;
+  }
+
+  /* Asegúrate de que el botón se ajuste correctamente */
+  .boton-descargar {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .descripction{
+ width: 100%;  /* Ensure the description takes up full container width */
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 0;  /* Remove extra margin */
+  word-wrap: break-word;  /* Ensure long words break and wrap to next line */
+  overflow-wrap: break-word;
+  }
+
+  .infoProjectContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 60%;  /* Full width for mobile */
+    padding: 10px;
+  }
+
+  .imageProject
+  {
+    flex: 0 0 300px;
+    height: 200px;
+  }
+  
+}
+
+/* Para pantallas medianas (tabletas) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navegacion ul {
+    gap: 10px;
+  }
+
+  .navegacion ul li a {
+    margin: 0 20px;
+    font-size: 14px;
+  }
+
+  /* Ajusta las imágenes de actividades */
+  .activitie-img {
+    height: 200px;
+    width: 440px;
+  }
+
+  .fotoPrincipal img{
+    width: 350px;
+    height: 350px;
+
+  }
+
+
+ 
+  
+  .fotoPrincipal {
+    position: relative;
+    display: inline-block;
+      width: 350px;  /* Ensure both width and height are equal for a circular shape */
+      height: 350px;
+    border-radius: 50%;  /* This ensures the container is circular */
+    overflow: hidden;  /* Ensures the image stays inside the container */
+    background: linear-gradient(45deg, #00ffa2, #1CBBFF);  /* Gradient background */
+    margin-right: -50px;  /* Adjust the margin if needed */
+    box-shadow: 0px 0px 100px #00ffa2; /* Sombra */
+  }
+
+
+  .nombre-completo{
+    margin-top: 50px;
+
+    align-items:last baseline
+  }
+  .apellido{
+    font-size: 50px;
+  }
+  .nombre{
+    font-size: 20px;
+  }
+
+  .infoProjectContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;  /* Full width for mobile */
+    padding: 10px;
+  }
+}
+
+/* Para pantallas grandes (escritorios grandes) */
+@media (min-width: 1269px)and (max-width: 1446px) {
+  .fotoPrincipal img{
+    width: 500px;
+    height: 500px;
+
+  }
+
+ 
+  
+  .fotoPrincipal {
+    position: relative;
+    display: inline-block;
+      width: 500px;  /* Ensure both width and height are equal for a circular shape */
+      height: 500px;
+    border-radius: 50%;  /* This ensures the container is circular */
+    overflow: hidden;  /* Ensures the image stays inside the container */
+    background: linear-gradient(45deg, #00ffa2, #1CBBFF);  /* Gradient background */
+    margin-right: -50px;  /* Adjust the margin if needed */
+    box-shadow: 0px 0px 100px #00ffa2; /* Sombra */
+  }
+
+
+  .apellido{
+    font-size: 100px;
+  }
+
+
+}
+
+/* Para pantallas grandes (escritorios grandes) */
+@media (min-width: 1024px)and (max-width: 1269px) {
+  .fotoPrincipal img{
+    width: 400px;
+    height: 400px;
+
+  }
+
+ 
+  
+  .fotoPrincipal {
+    position: relative;
+    display: inline-block;
+      width: 400px;  /* Ensure both width and height are equal for a circular shape */
+      height: 400px;
+    border-radius: 50%;  /* This ensures the container is circular */
+    overflow: hidden;  /* Ensures the image stays inside the container */
+    background: linear-gradient(45deg, #00ffa2, #1CBBFF);  /* Gradient background */
+    margin-right: -50px;  /* Adjust the margin if needed */
+    box-shadow: 0px 0px 100px #00ffa2; /* Sombra */
+  }
+
+
+  .apellido{
+    font-size: 80px;
+  }
+
+
 }

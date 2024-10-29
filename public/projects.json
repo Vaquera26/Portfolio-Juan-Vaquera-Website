@@ -1,0 +1,49 @@
+[
+  
+  {
+    "name": "JoinMe",
+"description": "An event management app built for iOS and Android using Expo, React, and NestJS, integrating Google Maps APIs. It addresses the problem of fragmented event organization by providing a seamless way for users to create, manage, and join events. With real-time location services and intuitive event management features, it aims to improve user engagement and participation, simplifying the process of coordinating events.",
+    "technologies": [  "react","nestjs", "js", "ts", "sql", "figma","github"],
+    "photo": "joinme.png"
+  },
+  {
+    "name": "VLSM CALCULATOR",
+    "description": "Designed a web page using React and CSS that allows users to calculate the subnetting of a network address. The tool automatically calculates the subnetting for each subnetwork and includes step-by-step instructions to guide users through the process of calculating and understanding the subnetting for each network. This makes it an accessible and practical tool for users at various skill levels.",
+    "technologies": ["react", "figma", "js"],
+    "photo": "vlsmCalculator.png"
+  },
+  {
+    "name": "Listen IA",
+"description": "As a proposal to participate in HackMTY 2024, my team and I designed and prototyped ListenIA, a lifestyle app focused on emotional well-being. The app was designed in Figma, and it features a chatbot developed using React and the ChatGPT API. ListenIA’s goal is to ensure that no one feels alone by providing emotional support through the chatbot, along with features like daily notes, activity lists, an idea journal, and personalized AI-driven recommendations. While the full app remains a design prototype, the chatbot is fully functional.",
+    "technologies": [ "react", "figma"],
+    "photo": "listenIA.png"
+  },
+  {
+  "name": "Computer Lab Scheduling",
+  "description": "Developed an application using Java and SQL Server that automatically assigns classrooms based on the quality of the room and the teacher's rating. This application has improved the efficiency of classroom assignments, reducing scheduling conflicts and assigning classrooms fairly.",
+  "technologies": ["java", "sql"],
+  "photo": "computerLabImage.png"
+}
+,
+  {
+    "name": "CRUD F1",
+"description": "Collaborated with a team to create an application using SQL and Java for efficient management of information related to Formula 1. This application handles aspects such as season assignments, races, and points.",
+    "technologies": [ "java", "sql"],
+    "photo": "F1CRUD.png"
+  },
+
+  {
+    "name": "Chambitas App",
+"description": "Designed an application prototype using Figma aimed at facilitating the search for service-based jobs, similar to Uber but focused on trades and small jobs. The app connects service providers with clients, improving communication and accessibility. Service providers can offer their skills, while clients can easily find and book the help they need, streamlining the connection between workers and those in need of services.",
+    "technologies": [  "figma"],
+    "photo": "chambitas.png"
+  }
+  , 
+  {
+    "name": "HackMTY 2023",
+"description": "Participated in HackMTY and, with a team, developed a prototype in one day using a Predictive Model, Python, Streamlit, and Figma. The project focused on creating an investment and financial management tool tailored to client interests and financial situations.",
+    "technologies": [  "python","figma"],
+    "photo": "hackmty23.png"
+  }
+
+]

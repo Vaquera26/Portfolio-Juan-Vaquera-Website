@@ -40,3 +40,15 @@ This version is more personal and focused on helping people understand who you a
 
 ![Juan Fernando Vaquera Sanchez](https://firebasestorage.googleapis.com/v0/b/vaquera-github.firebasestorage.app/o/Juan-Fernando-Vaquera-Sanchez-Images%2FPortfolio.jpeg?alt=media&token=68b2e1f8-3265-433b-a28c-474d4e703bae)
 
+## About
+<div align="center">
+  <img src="https://firebasestorage.googleapis.com/v0/b/vaquera-github.firebasestorage.app/o/Juan-Fernando-Vaquera-Sanchez-Images%2FJuan%20Fernando%20Vaquera.PNG?alt=media&token=35ba9787-1dd1-41ac-a253-d7eacb022247" width="150" style="border-radius:50%;">
+
+  ### 👋 Hi, I'm **Juan Fernando Vaquera Sánchez**  
+
+  📫 **Email:** [juan.tec@outlook.com](mailto:juan.tec@outlook.com)  
+  🌐 **Website:** [codexvaquera.studio](https://www.codexvaquera.studio/)  
+  💼 **LinkedIn:** [linkedin.com/in/juan-vaquera-ln](https://www.linkedin.com/in/juan-vaquera-ln/)  
+  🐙 **GitHub:** [github.com/Vaquera26](https://github.com/Vaquera26)  
+  
+</div>

@@ -38,7 +38,7 @@ Check out my live portfolio: [**www.codexvaquera.studio**](https://www.codexvaqu
 This version is more personal and focused on helping people understand who you are and how they can connect with you, rather than going too deep into the functionality of the site. Let me know if you want to tweak anything further!
 ## 📸  Photos
 
-![Juan Fernando Vaquera Sanchez](https://firebasestorage.googleapis.com/v0/b/vaquera-github.firebasestorage.app/o/Juan-Fernando-Vaquera-Sanchez-Images%2FPortfolio.jpeg?alt=media&token=68b2e1f8-3265-433b-a28c-474d4e703bae)
+![Juan Fernando Vaquera Sanchez](https://github.com/Vaquera26/Portfolio-Juan-Vaquera-Website/blob/master/Photos/Portfolio.jpeg?raw=true)
 
 ## About
 <div align="center">
